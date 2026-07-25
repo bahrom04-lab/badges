@@ -9,12 +9,11 @@ pub async fn generate_badge(instance: String, owner: String, repo: String) -> St
         .await
         .expect("Couldn't read text");
 
-    // println!("Body: {body}");
-    body = body.replace("\"", "");
-    body = body.replace("\n", "");
-    body = body.replace("{", "");
-    body = body.replace("}", "");
-    // println!("Body: {body}");
+    body = body
+        .replace("\"", "")
+        .replace("\n", "")
+        .replace("{", "")
+        .replace("}", "");
 
     let parts = body.split(",").collect::<Vec<&str>>();
     // println!("Body: {parts:#?}");
