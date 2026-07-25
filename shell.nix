@@ -11,6 +11,9 @@ pkgs.mkShell {
     pkgconf
     libinput
 
+    # Deno
+    deno
+
     # Nix
     alejandra
     nixd
