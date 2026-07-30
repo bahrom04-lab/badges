@@ -28,7 +28,7 @@ struct Meta {
 }
 
 async fn gen_badge(Query(params): Query<Meta>) -> impl IntoResponse {
-    let badge_url = generate_badge(params.instance, params.owner, params.repo).await;
+    let badge_url = generate_badge(&params.instance, &params.owner, &params.repo).await;
 
     Redirect::to(&badge_url)
 }
